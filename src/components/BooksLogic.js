@@ -1,26 +1,26 @@
-import InputBook from "./InputBook";
-import BooksList from "./BooksList";
-import { useState } from "react";
+import { useState } from 'react';
+import InputBook from './InputBook';
+import BooksList from './BooksList';
 
 const BooksLogic = () => {
   const [books, setBooks] = useState([
     {
       id: 1,
-      name: "The Hunger Games",
-      author: "Suzanne Collins",
-      category: "Action",
+      name: 'The Hunger Games',
+      author: 'Suzanne Collins',
+      category: 'Action',
     },
     {
       id: 2,
-      name: "Dune",
-      author: "Frank Herbert",
-      category: "Science Fiction",
+      name: 'Dune',
+      author: 'Frank Herbert',
+      category: 'Science Fiction',
     },
     {
       id: 3,
-      name: "Capital in the Twenty-First Century",
-      author: "Suzanne Collins",
-      category: "Science Fiction",
+      name: 'Capital in the Twenty-First Century',
+      author: 'Suzanne Collins',
+      category: 'Science Fiction',
     },
   ]);
 
@@ -30,7 +30,7 @@ const BooksLogic = () => {
       return updatedBooks.map((book, index) => ({ ...book, id: index + 1 }));
     });
   };
-  
+
   return (
     <div>
       <BooksList booksProps={books} deleteBook={deleteBook} />

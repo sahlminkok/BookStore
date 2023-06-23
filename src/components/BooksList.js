@@ -1,5 +1,5 @@
-import BookItem from "./BookItem";
 import PropTypes from 'prop-types';
+import BookItem from './BookItem';
 
 const BooksList = ({ booksProps, deleteBook }) => {
   if (!booksProps) {
