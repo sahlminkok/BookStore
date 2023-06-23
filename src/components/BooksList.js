@@ -15,7 +15,12 @@ const BooksList = ({ booksProps, deleteBook }) => {
 };
 
 BooksList.propTypes = {
-  booksProps: PropTypes.array.isRequired,
+  booksProps: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+  }).isRequired).isRequired,
   deleteBook: PropTypes.func.isRequired,
 };
 
