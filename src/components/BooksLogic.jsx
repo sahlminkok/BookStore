@@ -25,12 +25,12 @@ const BooksLogic = () => {
   ]);
 
   const deleteBook = (id) => {
-    setBooks([
-      ...books.filter((book) => {
-        return book.id !== id;
-      }),
-    ]);
+    setBooks((prevBooks) => {
+      const updatedBooks = prevBooks.filter((book) => book.id !== id);
+      return updatedBooks.map((book, index) => ({ ...book, id: index + 1 }));
+    });
   };
+  
   return (
     <div>
       <BooksList booksProps={books} deleteBook={deleteBook} />
