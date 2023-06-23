@@ -27,7 +27,7 @@ After you're finished please remove all the comments and instructions!
 
 <div align="center">
 
-  <h2><b>Math Magicians</b></h2>
+  <h2><b>Bookstore</b></h2>
 
 </div>
 
@@ -36,7 +36,7 @@ After you're finished please remove all the comments and instructions!
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Math Magicians ](#-math-magicians-)
+- [📖 Bookstore ](#-bookstore-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -56,9 +56,9 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Math Magicians <a name="about-project"></a>
+# 📖 Bookstore <a name="about-project"></a>
 
-**Math Magicians** is a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to make simple calculations, and read a random math-related quote.
+**Bookstore** is a web application that allows users to browse, search, and Add books online. It provides a user-friendly interface where users can explore a wide range of books, view book details, add books to their cart, and complete the checkout process.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -104,9 +104,9 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
-- **Fetching and Displaying Random Quotes from an API**
-- **Calculator that Allows You to do the Basic Calculation**
-- **Build with React Library**
+- **Adding preferable books**
+- **Edit and Comment your book**
+- **Remove the Book**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -130,7 +130,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone https://github.com/sahlminkok/MathMagicians.git
+  git clone https://github.com/sahlminkok/BookStore.git
 ```
 
 ### Install
@@ -138,7 +138,7 @@ Clone this repository to your desired folder:
 Install this project with:
 
 ```sh
-  cd MathMagicians
+  cd BookStore
   npm install
 ```
 
@@ -155,7 +155,7 @@ To run the project, execute the following command:
 To run tests, run the following command:
 
 ```sh
-  npm test [ file name ]
+  npm test
 ```
 
 ### Deployment
@@ -183,9 +183,9 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Add Events.**
-- [ ] **Refactor with hooks.**
-- [ ] **Deploy the website.**
+- [ ] **Update Categories Route**
+- [ ] **Add Animations**
+- [ ] **Deploy the Web App.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
