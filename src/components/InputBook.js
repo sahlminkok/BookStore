@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/booksSlice';
+import { addBook, getBooks } from '../redux/books/booksSlice';
 
 const InputBook = () => {
   const dispatch = useDispatch();
@@ -17,36 +17,43 @@ const InputBook = () => {
     }));
   };
 
-  const handleDispatch = (e) => {
+  const handleDispatch = async (e) => {
     e.preventDefault();
-    const info = [book.title, book.author];
-    if (info[0] !== '' || info[1] !== '') {
-      dispatch(addBook(info));
-      book.title = '';
-      book.author = '';
+    const bookInfo = [book.title, book.author];
+    if (bookInfo[0] !== '' || bookInfo[1] !== '') {
+      try {
+        await dispatch(addBook(bookInfo));
+        dispatch(getBooks());
+        setBook({ title: '', author: '' });
+      } catch (error) {
+        throw new Error(error);
+      }
     }
   };
 
   return (
-    <>
-      <form>
+    <div>
+      <h2>Add a Book</h2>
+      <form onSubmit={handleDispatch}>
         <input
           type="text"
           name="title"
           value={book.title}
-          placeholder="Book title"
           onChange={handleChange}
+          placeholder="Title"
+          required
         />
         <input
           type="text"
           name="author"
           value={book.author}
-          placeholder="Author"
           onChange={handleChange}
+          placeholder="Author"
+          required
         />
-        <button type="submit" onClick={handleDispatch}>Add Book</button>
+        <button type="submit">Add Book</button>
       </form>
-    </>
+    </div>
   );
 };
 

@@ -1,18 +1,27 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import BookItem from './BookItem';
+import { getBooks } from '../redux/books/booksSlice';
 
 const BooksList = () => {
-  const { booksList } = useSelector((store) => store.books);
+  const dispatch = useDispatch();
+  const books = useSelector((store) => store.books.booksList);
 
-  // if (bookItems.length === 0) {
-  //   return <div>You didn&apos;t insert a book yet</div>;
-  // }
+  useEffect(() => {
+    dispatch(getBooks());
+  }, [dispatch]);
+
   return (
     <div>
-      {booksList.map((book) => (
-        <BookItem key={book.id} book={book} />
-      ))}
+      {Object.entries(books).map(([itemId, bookArray]) => bookArray.map((book) => (
+        <BookItem
+          key={itemId}
+          itemId={itemId}
+          category={book.category}
+          title={book.title}
+          author={book.author}
+        />
+      )))}
     </div>
   );
 };
