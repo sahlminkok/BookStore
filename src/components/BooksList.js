@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import BookItem from './BookItem';
 import { getBooks } from '../redux/books/booksSlice';
+import '../styles/booksList.css';
 
 const BooksList = () => {
   const dispatch = useDispatch();
@@ -12,7 +13,7 @@ const BooksList = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="books">
       {Object.entries(books).map(([itemId, bookArray]) => bookArray.map((book) => (
         <BookItem
           key={itemId}
