@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { removeBook, getBooks } from '../redux/books/booksSlice';
+import '../styles/bookItem.css';
 
 const BookItem = ({
   itemId, category, title, author,
@@ -17,38 +18,37 @@ const BookItem = ({
   };
 
   return (
-    <div>
-      <div>
-        <p>{category}</p>
-        <h2>{title}</h2>
-        <p>{author}</p>
-      </div>
-      <ul>
-        <li>
+    <div className="book">
+      <div className="group">
+        <div className="bookElm">
+          <p>{category}</p>
+          <h2>{title}</h2>
+          <p>{author}</p>
+        </div>
+        <div className="CREBtn">
           <button type="button">Comments</button>
-        </li>
-        <li>
           <button
             type="button"
             onClick={() => handleRemoveBtn(itemId)}
           >
             Remove
           </button>
-        </li>
-        <li>
           <button type="button">Edit</button>
-        </li>
-      </ul>
-      <div>
-        <p>
-          64%
-        </p>
-        <p>completed</p>
+        </div>
       </div>
-      <div>
-        <p>current chapter</p>
-        <p>chapter 8</p>
-        <button type="button">update progress</button>
+      <div className="group2">
+        <div className="completed">
+          <div className="progress"> </div>
+          <div className="cmpltd">
+            <p>64%</p>
+            <p>completed</p>
+          </div>
+        </div>
+        <div className="chapter">
+          <p>current chapter</p>
+          <p>Chapter 8</p>
+          <button type="button">update progress</button>
+        </div>
       </div>
     </div>
   );

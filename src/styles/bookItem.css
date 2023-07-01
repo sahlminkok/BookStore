@@ -1,0 +1,132 @@
+.book {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 68%;
+  height: 10.625rem;
+  margin: auto;
+  padding: 2rem 9.188rem 1.625rem 1.688rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+  margin-bottom: 0.938rem;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.31rem;
+}
+
+.bookElm {
+  margin: 0;
+  padding: 0;
+}
+
+.bookElm p {
+  font-size: 0.875rem;
+  margin-bottom: 5px;
+}
+
+.bookElm p:first-of-type {
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  color: #363636;
+  opacity: 0.5;
+}
+
+.bookElm p:nth-of-type(2) {
+  color: #4386bf;
+  font-family: RobotoSlab, sans-serif;
+  font-weight: 300;
+}
+
+.bookElm h2 {
+  font-family: RobotoSlab, sans-serif;
+  font-size: 1.375rem;
+  font-weight: bold;
+  font-stretch: normal;
+  margin: 1px 0;
+}
+
+.CREBtn {
+  display: flex;
+}
+
+.CREBtn button {
+  font-family: RobotoSlab, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #4386bf;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  padding-right: 2.125rem;
+}
+
+.group2 {
+  display: flex;
+  gap: 6rem;
+  align-items: center;
+  justify-content: center;
+  margin-right: -3rem;
+}
+
+.completed {
+  display: flex;
+  padding-top: 20px;
+  gap: 1.313rem;
+  align-items: center;
+  font-family: Montserrat, sans-serif;
+}
+
+.progress {
+  width: 4.25rem;
+  height: 4.25rem;
+  border: 5px solid #0290ff;
+  border-radius: 50%;
+}
+
+.cmpltd p:nth-of-type(1) {
+  font-size: 2rem;
+  margin: 1px;
+  padding-top: 10px;
+  font-weight: normal;
+  color: #121212;
+}
+
+.cmpltd p:nth-of-type(2) {
+  margin: 0.438rem 4.938rem 0.75rem 0.75rem;
+  opacity: 0.5;
+  font-size: 0.875rem;
+  margin-left: 0;
+}
+
+.chapter {
+  font-family: RobotoSlab, sans-serif;
+  font-weight: 300;
+  color: #121212;
+}
+
+.chapter p:first-of-type {
+  opacity: 0.5;
+  font-size: 0.813rem;
+}
+
+.chapter p:nth-of-type(2) {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.chapter button {
+  font-size: 0.813rem;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  border-radius: 3px;
+  background-color: #0290ff;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
