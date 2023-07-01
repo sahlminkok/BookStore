@@ -1,20 +1,27 @@
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { removeBook } from '../redux/books/booksSlice';
+import { removeBook, getBooks } from '../redux/books/booksSlice';
 
-const BookItem = ({ book }) => {
+const BookItem = ({
+  itemId, category, title, author,
+}) => {
   const dispatch = useDispatch();
 
-  const handleRemoveBtn = () => {
-    dispatch(removeBook(book.id));
+  const handleRemoveBtn = async (itemId) => {
+    try {
+      await dispatch(removeBook(itemId));
+      dispatch(getBooks());
+    } catch (error) {
+      throw new Error(error);
+    }
   };
 
   return (
     <div>
       <div>
-        <p>{book.category}</p>
-        <h2>{book.title}</h2>
-        <p>{book.author}</p>
+        <p>{category}</p>
+        <h2>{title}</h2>
+        <p>{author}</p>
       </div>
       <ul>
         <li>
@@ -23,7 +30,7 @@ const BookItem = ({ book }) => {
         <li>
           <button
             type="button"
-            onClick={handleRemoveBtn}
+            onClick={() => handleRemoveBtn(itemId)}
           >
             Remove
           </button>
@@ -48,12 +55,10 @@ const BookItem = ({ book }) => {
 };
 
 BookItem.propTypes = {
-  book: PropTypes.shape({
-    id: PropTypes.number,
-    title: PropTypes.string,
-    author: PropTypes.string,
-    category: PropTypes.string,
-  }).isRequired,
+  itemId: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
 };
 
 export default BookItem;
